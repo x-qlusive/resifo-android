@@ -12,9 +12,11 @@ Die Unterkunftsdaten können mittels Widget direkt mit dem aktuellen Standort be
 ![startdesign](/jpg/design4.PNG)
 
 Checkboxen können durch anklicken ausgewählt werden. Auch die Abmeldeunterkunft kann mittels Standortwidget vorbefüllt werden
+
 ![startdesign](/jpg/design5.PNG)
 
 Die Unterschrift kann direkt in der Applikation getätigt werden.
+
 ![startdesign](/jpg/design6.PNG)
 
 Sollte man im ersten Schritt "Einträge Anzeigen" ausgewählt haben kommt man in diese Ansicht.
