@@ -17,9 +17,7 @@ Checkboxen können durch anklicken ausgewählt werden. Auch die Abmeldeunterkunf
 
 Die Unterschrift kann direkt in der Applikation getätigt werden.
 
-![startdesign](/jpg/design6.PNG)![startdesign](/jpg/design7.PNG)
-
-Sollte man im ersten Schritt "Einträge Anzeigen" ausgewählt haben kommt man in diese Ansicht.
+![startdesign](/jpg/design6.PNG)![startdesign](/jpg/design7.PNG) Sollte man im ersten Schritt "Einträge Anzeigen" ausgewählt haben kommt man in diese Ansicht.
 Hier werden in einer View die diversen Einträge angezeigt und man kann auswählen ob man Sie editieren oder löschen möchte. Sollte man eine Löschung wünschen muss dies ein zweites Mal bestätigt werden.
 
 
