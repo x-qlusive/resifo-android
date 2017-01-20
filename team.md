@@ -4,6 +4,8 @@ Team PinkFluffyUnicorns stellt sich vor:
 
 Carina Cölestin: Design and Dokumentation, Appentwicklung
 
-Verenea Leifert: Datenbanken und Design Implementierung, Appentwicklung
+Nikolaus Hribernig: Datenbanken und Design Implementierung, Appentwicklung
+
+Labinot Jashanica: Design und Datenbankanbindung
 
 Patrick Plank: Appentwicklung, Projektleitung
