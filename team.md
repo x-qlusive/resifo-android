@@ -8,4 +8,4 @@ Nikolaus Hribernig: Datenbanken und Design Implementierung, Appentwicklung
 
 Labinot Jashanica: Design und Datenbankanbindung
 
-Patrick Plank: Appentwicklung, Projektleitung
+Patrick Plank: Appentwicklung, Datenbank, Projektleitung
