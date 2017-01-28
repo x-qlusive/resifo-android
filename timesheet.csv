@@ -7,3 +7,5 @@ vleifert,20161223,3,paper prototype creating
 jashanic14,20170119,2,"added the layouts: activity_meldezettel (edited only), informationen, agb_confirmation)"
 pplank,20170120,4,investigating database creation
 pplank,20170128,3,added demo database
+ccoelestin,20170128,5,"added layouts ausland, abmeldung, hauptwohnsitz, unterkunftgeber, unterschrift, meldepflichtiger"
+nhribernig,20170128,5,database editing and testing
