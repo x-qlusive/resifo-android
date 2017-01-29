@@ -30,13 +30,46 @@ class DbActivity extends Activity {
     aDb = SimpleDb(getApplicationContext)
   }
 
+
+
+
   def saveToDb(view: View): Unit = {
     val firstName: String = findViewById(R.id.firstName).asInstanceOf[EditText].getText.toString
     val secondName: String = findViewById(R.id.secondName).asInstanceOf[EditText].getText.toString
 
     // I WANT TO WRITE TO THE DATABASE
-    val person: Person = Person(firstName, secondName)
+    val unmarriedName: String = ???
+    val dateOfBirth: String = ???
+    val sex = 0
+    val religion: String = ???
+    val birthCity: String = ???
+    val civilStatus: String = ???
+    val state: String = ???
+    val zmr: int = ???
+    val documentNr: Int = ???
+    val documentIssueDate: String = ???
+    val newStreet: String = ???
+    val newHouseNr: int = ???
+    val newLevel: int = ???
+    val newDoorNr: int = ???
+    val mainStreet: String = ???
+    val mainHouseNr: String = ???
+    val mainLevel: int = ???
+    val mainDoorNr: int = ???
+    val oldState: String = ???
+    val oldStreet: String = ???
+    val oldHouseNr: int = ???
+    val oldLevel: int = ???
+    val oldDoorNr: int = ???
+    val newState: String = ???
+    val landlord: String = ???
 
+    //Daten aus den Views müssen hier eingetragen werden
+    val person:Person = Person(firstName, secondName, unmarriedName, dateOfBirth,
+      sex, religion, birthCity, civilStatus, state , zmr,documentNr,
+      documentIssueDate, newStreet, newHouseNr, newLevel, newDoorNr,
+      mainStreet, mainHouseNr, mainLevel, mainDoorNr, oldState,
+      oldStreet, oldHouseNr, oldLevel, oldDoorNr, newState, landlord)
     val personDao = aDb.mkPersonDao()
     personDao.insert(person)
   }

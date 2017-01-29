@@ -10,11 +10,11 @@ package at.fh.swengb.resifo_android
 }*/
 
 case class Person(firstName: String, secondName: String,
-                  unmarrriedName: String, dateOfBirth: String,
+                  unmarriedName: String, dateOfBirth: String,
                   sex:Int, religion: String, birthCity:String,
                   civilStatus:String, state:String, zmr:Int,
                   documentNr: Int, documentIssueDate: String,
-                  newStreet: String, newHouseNr: String, newLevel: Int,
+                  newStreet: String, newHouseNr:String, newLevel: Int,
                   newDoorNr: Int, mainStreet: String, mainHouseNr: String, mainLevel: Int,
                   mainDoorNr: Int, oldState:String, oldStreet: String, oldHouseNr: String, oldLevel: Int,
                   oldDoorNr: Int, newState:String, landlord:String)
