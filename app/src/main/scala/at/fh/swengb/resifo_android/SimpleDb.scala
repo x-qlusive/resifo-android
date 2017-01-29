@@ -11,7 +11,7 @@ import scala.collection.mutable.ListBuffer
 
 object SimpleDb {
 
-  val Name = "mydb"
+  val Name = "certificateOFRegistration"
 }
 
 /**
@@ -26,6 +26,7 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
   override def onCreate(db: SQLiteDatabase): Unit = {
 
     // perform initial setup
+    /*
     val personDao = SqlitePersonDao(db)
 
     personDao.init()
@@ -33,7 +34,7 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
     for (i <- 1 to 100) personDao.insert(Person.mkRandom)
 
   }
-
+*/
   def mkPersonDao(): SqlitePersonDao = SqlitePersonDao(getWritableDatabase)
 
 
@@ -60,7 +61,7 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
     */
   case class SqlitePersonDao(db: SQLiteDatabase) extends BaseDao[Person] {
 
-    def init(): Unit = db.execSQL("create table person (id INTEGER PRIMARY KEY ASC, firstname TEXT, secondname TEXT);")
+    def init(): Unit = db.execSQL("create table person (id INTEGER PRIMARY KEY ASC, firstname TEXT, secondname TEXT, unmarrriedName TEXT, dateOfBirth TEXT ,sex INT, religion TEXT, birthCity TEXT, civilStatus TEXT, state TEXT, zmr INT,documentNr INT, documentIssueDate TEXT, newStreet TEXT, newHouseNr TEXT, newLevel INT,newDoorNr INT, mainStreet TEXT, mainHouseNr INT, mainLevel INT,mainDoorNr INT, oldState TEXT, oldStreet TEXT, oldHouseNr INT, oldLevel INT, oldDoorNr: Int, newState TEXT, landlord TEXT);")
 
     /**
       * Insert a person to the database.
