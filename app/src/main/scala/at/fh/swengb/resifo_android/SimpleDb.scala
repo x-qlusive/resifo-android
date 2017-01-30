@@ -49,7 +49,7 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
     // ... and other functions
   }
 
-  def mkContentValues(p: Person): ContentValues = {
+ /* def mkContentValues(p: Person): ContentValues = {
     val cv = new ContentValues
     cv.put("firstName", p.firstName)
     cv.put("secondName", p.secondName)
@@ -80,7 +80,7 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
     cv.put("landlord", p.landlord)
     cv
   }
-
+*/
   /**
     * Hides details of database table 'Person'
     *
@@ -98,16 +98,17 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
       *
       * @param p
       */
-    def insert(p: Person): Long = {
+    def insert(p: Person): Long = ??? /*{
       val cv: ContentValues = mkContentValues(p)
       db.insert("person", null, cv)
     }
-
+*/
     def deleteByFirstName(firstName: String): Unit = {
       db.delete("person", "firstName = ?", Array(firstName))
     }
 
-    def update(p: Person): Int = {
+    def update(p: Person): Int = ??? /*
+    {
       db.update("person", mkContentValues(p), "firstName = ? and secondName = ? and  " +
         "unmarriedName = ? and dateOfBirth = ? and sex = ? and religion = ? and birthCity = ? " +
         "and civilStatus = ? and state = ? and zmr = ? and documentNr = ? and documentIssueDate = ? " +
@@ -120,7 +121,7 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
         p.mainStreet, p.mainHouseNr, p.mainLevel, p.mainDoorNr, p.oldState,
         p.oldStreet, p.oldHouseNr, p.oldLevel, p.oldDoorNr, p.newState, p.landlord))
     }
-
+*/
     /**
       * Returns a list of persons matching given firstName, or Nil if there is none
       *

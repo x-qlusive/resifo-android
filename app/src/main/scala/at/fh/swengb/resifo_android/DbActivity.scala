@@ -45,35 +45,35 @@ class DbActivity extends Activity {
     val birthCity: String = ???
     val civilStatus: String = ???
     val state: String = ???
-    val zmr: int = ???
+    val zmr: Int = ???
     val documentNr: Int = ???
     val documentIssueDate: String = ???
     val newStreet: String = ???
-    val newHouseNr: int = ???
-    val newLevel: int = ???
-    val newDoorNr: int = ???
+    val newHouseNr: Int = ???
+    val newLevel: Int = ???
+    val newDoorNr: Int = ???
     val mainStreet: String = ???
     val mainHouseNr: String = ???
-    val mainLevel: int = ???
-    val mainDoorNr: int = ???
+    val mainLevel: Int = ???
+    val mainDoorNr: Int = ???
     val oldState: String = ???
     val oldStreet: String = ???
-    val oldHouseNr: int = ???
-    val oldLevel: int = ???
-    val oldDoorNr: int = ???
+    val oldHouseNr: Int = ???
+    val oldLevel: Int = ???
+    val oldDoorNr: Int = ???
     val newState: String = ???
     val landlord: String = ???
 
     //Daten aus den Views müssen hier eingetragen werden
-    val person:Person = Person(firstName, secondName, unmarriedName, dateOfBirth,
+    /*  val person:Person = Person(firstName, secondName, unmarriedName, dateOfBirth,
       sex, religion, birthCity, civilStatus, state , zmr,documentNr,
       documentIssueDate, newStreet, newHouseNr, newLevel, newDoorNr,
       mainStreet, mainHouseNr, mainLevel, mainDoorNr, oldState,
       oldStreet, oldHouseNr, oldLevel, oldDoorNr, newState, landlord)
     val personDao = aDb.mkPersonDao()
     personDao.insert(person)
+  }*/
   }
-
   def loadFromDb(view: View): Unit = {
     val i = new Intent(this, classOf[MyListActivity])
     startActivity(i)
