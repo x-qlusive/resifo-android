@@ -24,8 +24,8 @@ class MainActivity extends Activity {
   }
 
   // called by a button click - see main.xml
-  def gotoFirstActivity(view: View): Unit = {
-    val i = new Intent(this, classOf[DbActivity])
+  def newEntry(view: View): Unit = {
+    val i = new Intent(this, classOf[AGBBestaetigung])
     startActivity(i)
   }
 
