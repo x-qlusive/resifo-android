@@ -19,11 +19,22 @@
         </activity>
         <activity
             android:name=".DbActivity"
-            android:label="@string/first_title"></activity>
+            android:label="@string/first_title" />
         <activity
             android:name=".MyListActivity"
             android:label="List Activity" />
-        <activity android:name=".AGBBestaetigung"></activity>
+        <activity android:name=".AGBBestaetigung" />
+        <activity android:name=".AGBInformationen" />
+        <activity android:name=".PersDaten1" />
+        <activity android:name=".PersDaten2" />
+        <activity android:name=".ZMRZahl3" />
+        <activity android:name=".Reisedokument4" />
+        <activity android:name=".AnmeldungUnterkunft5" />
+        <activity android:name=".HauptwohnsitzNein6" />
+        <activity android:name=".ZuzugAusland7" />
+        <activity android:name=".AbmeldungUnterkunft8" />
+        <activity android:name=".Unterkunftgeber9" />
+        <activity android:name=".Meldepflichtiger10" />
     </application>
 
 </manifest>
