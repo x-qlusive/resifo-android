@@ -17,7 +17,7 @@ import scala.util.Random
 
 
 /**
-  * Shows how to lookup user interface elements via findViewById, and more importantly
+  * Shows how to lookup user Interface elements via findViewById, and more importantly
   * an example how to use SQLiteOpenHelper class
   */
 class DbActivity extends Activity {
@@ -40,27 +40,27 @@ class DbActivity extends Activity {
     // I WANT TO WRITE TO THE DATABASE
     val unmarriedName: String = ???
     val dateOfBirth: String = ???
-    val sex = 0
+    val sex:String = ???
     val religion: String = ???
     val birthCity: String = ???
     val civilStatus: String = ???
     val state: String = ???
-    val zmr: int = ???
-    val documentNr: Int = ???
+    val zmr: String = ???
+    val documentNr: String = ???
     val documentIssueDate: String = ???
     val newStreet: String = ???
-    val newHouseNr: int = ???
-    val newLevel: int = ???
-    val newDoorNr: int = ???
+    val newHouseNr: String = ???
+    val newLevel: String = ???
+    val newDoorNr: String = ???
     val mainStreet: String = ???
     val mainHouseNr: String = ???
-    val mainLevel: int = ???
-    val mainDoorNr: int = ???
+    val mainLevel: String = ???
+    val mainDoorNr: String = ???
     val oldState: String = ???
     val oldStreet: String = ???
-    val oldHouseNr: int = ???
-    val oldLevel: int = ???
-    val oldDoorNr: int = ???
+    val oldHouseNr: String = ???
+    val oldLevel: String = ???
+    val oldDoorNr: String = ???
     val newState: String = ???
     val landlord: String = ???
 

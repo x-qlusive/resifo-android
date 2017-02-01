@@ -89,9 +89,9 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
   case class SqlitePersonDao(db: SQLiteDatabase) extends BaseDao[Person] {
 
     def init(): Unit = db.execSQL("create table person (id INTEGER PRIMARY KEY ASC, firstName TEXT, secondName TEXT, unmarriedName TEXT, dateOfBirth TEXT ," +
-      "sex INT, religion TEXT, birthCity TEXT, civilStatus TEXT, state TEXT, zmr INT, documentNr INT, documentIssueDate TEXT, " +
-      "newStreet TEXT, newHouseNr TEXT, newLevel INT, newDoorNr INT, mainStreet TEXT, mainHouseNr INT, mainLevel INT, mainDoorNr INT, " +
-      "oldState TEXT, oldStreet TEXT, oldHouseNr INT, oldLevel INT, oldDoorNr INT, newState TEXT, landlord TEXT);")
+      "sex TEXT, religion TEXT, birthCity TEXT, civilStatus TEXT, state TEXT, zmr TEXT, documentNr TEXT, documentIssueDate TEXT, " +
+      "newStreet TEXT, newHouseNr TEXT, newLevel TEXT, newDoorNr TEXT, mainStreet TEXT, mainHouseNr TEXT, mainLevel TEXT, mainDoorNr TEXT, " +
+      "oldState TEXT, oldStreet TEXT, oldHouseNr TEXT, oldLevel TEXT, oldDoorNr String, newState TEXT, landlord TEXT);")
 
     /**
       * Insert a person to the database.
@@ -124,8 +124,8 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
     /**
       * Returns a list of persons matching given firstName, or Nil if there is none
       *
-      * @param firstName the firstName to search for
-      * @return
+      * param firstName the firstName to search for
+      * return
       *//*
     def findByFirstName(firstName: String): List[Person] = {
       var someCursor: Option[Cursor] = None
