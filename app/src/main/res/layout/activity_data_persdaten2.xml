@@ -79,7 +79,7 @@
         <TextView
             android:layout_width="189dp"
             android:layout_height="30dp"
-            android:id="@+id/textView22"
+            android:id="@+id/religion"
             android:textSize="18sp"
             android:layout_marginLeft="10dp"
             android:background="@android:color/darker_gray"
@@ -125,7 +125,7 @@
             android:layout_height="30dp"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText298"
+            android:id="@+id/geburtsort"
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
