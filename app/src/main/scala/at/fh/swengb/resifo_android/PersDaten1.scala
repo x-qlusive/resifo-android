@@ -10,7 +10,6 @@ import android.view.View
 import android.widget.{DatePicker, EditText, RadioButton}
 
 
-
 class PersDaten1 extends AppCompatActivity {
   private[resifo_android] var date: EditText = null
   private[resifo_android] var datePickerDialog: DatePickerDialog = null
@@ -43,18 +42,23 @@ class PersDaten1 extends AppCompatActivity {
 
   def dataInput2(view: View): Unit = {
 
-    val vorname: EditText = findViewById(R.id.vorname).asInstanceOf[EditText]
-    val nachname: EditText = findViewById(R.id.nachname).asInstanceOf[EditText]
+    val vorname: String = findViewById(R.id.vorname).asInstanceOf[EditText].getText.toString
+    val nachname: String = findViewById(R.id.nachname).asInstanceOf[EditText].getText.toString
 
+    val cond1: Boolean = vorname == null
+    val cond2: Boolean = vorname.equals("")
+    val cond3: Boolean = nachname == null
+    val cond4: Boolean = nachname.equals("")
 
-    if (vorname == null | vorname.getText().equals("") | nachname == null | nachname.getText().equals("")) {
-      val alertDialog = new AlertDialog.Builder(this).create();
-      alertDialog.setTitle("ACHTUNG");
-      alertDialog.setMessage("'Vorname' oder 'Nachname' wurde nicht ausgefüllt");
-      alertDialog.show();
+    println("mit |: " + ( cond1 | cond2 | cond3| cond4))
+    println("mit ||: " + ( cond1 || cond2 || cond3|| cond4))
 
-    }
-    else{
+    if (cond1 | cond2 | cond3 | cond4) {
+      val alertDialog = new AlertDialog.Builder(this).create()
+      alertDialog.setTitle("ACHTUNG")
+      alertDialog.setMessage("'Vorname' oder 'Nachname' wurde nicht ausgefüllt")
+      alertDialog.show()
+    } else {
       val jaIntent = new Intent(this, classOf[PersDaten2]); //
       startActivity(jaIntent);
     }
