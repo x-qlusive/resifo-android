@@ -17,7 +17,7 @@ class Meldepflichtiger10 extends AppCompatActivity {
   }
 
   def dataSave1(view: View): Unit = {
-    val i = new Intent(this, classOf[Meldepflichtiger10])
+    val i = new Intent(this, classOf[MainActivity])
     startActivity(i)
   }
 }

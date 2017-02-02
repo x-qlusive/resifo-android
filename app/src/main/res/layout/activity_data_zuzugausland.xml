@@ -30,21 +30,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical">>
-
-            <RadioButton
-                android:text="Ja"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/radioButton2"
-                android:textSize="18sp"
-                android:layout_weight="1" />
+            android:orientation="vertical">
 
             <RadioButton
                 android:text="Nein"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/radioButton3"
+                android:id="@+id/auslandNein"
+                android:textSize="18sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Ja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/auslandJa"
                 android:textSize="18sp"
                 android:layout_weight="1" />
 
@@ -81,7 +81,7 @@
             android:layout_height="30dp"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/staatsangabe"
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -106,7 +106,7 @@
             android:layout_marginEnd="10dp"
             android:text="◄"
             android:textStyle="normal|bold"
-            android:onClick="backToDi6" />
+            android:onClick="backToDi5" />
 
         <Button
             android:text="Weiter"

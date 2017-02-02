@@ -2,12 +2,12 @@ package at.fh.swengb.resifo_android
 
 import java.util.Calendar
 
-import android.app.DatePickerDialog
+import android.app.{AlertDialog, DatePickerDialog}
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.{DatePicker, EditText}
+import android.widget.{DatePicker, EditText, RadioButton}
 
 
 
@@ -42,8 +42,23 @@ class PersDaten1 extends AppCompatActivity {
   }
 
   def dataInput2(view: View): Unit = {
-    val i = new Intent(this, classOf[PersDaten2])
-    startActivity(i)
+
+    val vorname: EditText = findViewById(R.id.vorname).asInstanceOf[EditText]
+    val nachname: EditText = findViewById(R.id.nachname).asInstanceOf[EditText]
+
+
+    if (vorname == null | vorname.getText().equals("") | nachname == null | nachname.getText().equals("")) {
+      val alertDialog = new AlertDialog.Builder(this).create();
+      alertDialog.setTitle("ACHTUNG");
+      alertDialog.setMessage("'Vorname' oder 'Nachname' wurde nicht ausgefüllt");
+      alertDialog.show();
+
+    }
+    else{
+      val jaIntent = new Intent(this, classOf[PersDaten2]); //
+      startActivity(jaIntent);
+    }
+
   }
 
 }

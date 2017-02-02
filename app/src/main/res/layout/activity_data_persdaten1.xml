@@ -29,7 +29,7 @@
         <EditText
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/nachname"
             android:layout_weight="1"
             android:background="@android:color/darker_gray"
             android:layout_height="30dp"
@@ -67,7 +67,7 @@
             android:layout_height="30dp"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/vorname"
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"

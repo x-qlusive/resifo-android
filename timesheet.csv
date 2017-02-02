@@ -11,3 +11,4 @@ ccoelestin,20170128,7,"added layouts ausland, abmeldung, hauptwohnsitz, unterkun
 nhribernig,20170128,6,database editing and testing
 jashanic14,20170131,4.5,"Created new Activities (DataInput1-7) and linked them + Edited AGBBestaetigung & AGBInformationen Activities)"
 jashanic14,20170201,2,"Edited Activities and added 3 new and added all intents for the onClick Buttons + tested listViews with CustomAdapter [removed it again after testing])"
+jashanic14,20170201,4,"Implemented conditions for RadioButtons with popup error messages for user and tried to do the same for user input fields + changed the order of views"
