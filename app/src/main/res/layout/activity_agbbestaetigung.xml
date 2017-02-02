@@ -59,7 +59,7 @@
             android:text="Bestätigen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton5"
+            android:id="@+id/baestetigung"
             android:layout_weight="1"
             android:textSize="24sp"
             android:layout_marginTop="5dp"

@@ -1,9 +1,11 @@
 package at.fh.swengb.resifo_android
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.RadioButton
 
 class AGBBestaetigung extends AppCompatActivity {
   override protected def onCreate(savedInstanceState: Bundle) {
@@ -18,7 +20,19 @@ class AGBBestaetigung extends AppCompatActivity {
   }
 
   def agbNext(view: View): Unit = {
-    val i = new Intent(this, classOf[PersDaten1])
-    startActivity(i)
+    val baestetigung: RadioButton = findViewById(R.id.baestetigung).asInstanceOf[RadioButton]
+
+    if (baestetigung.isChecked()) {
+      val mIntent = new Intent(this, classOf[PersDaten1]); // <----- START "Personen Daten 1" ACTIVITY
+      startActivity(mIntent);
+    }
+
+    if (!baestetigung.isChecked()) {
+      val alertDialog = new AlertDialog.Builder(this).create();
+      alertDialog.setTitle("ACHTUNG");
+      alertDialog.setMessage("Sie müssen die Informationen zuvor bestätigen");
+      alertDialog.show();
+    }
   }
+
 }

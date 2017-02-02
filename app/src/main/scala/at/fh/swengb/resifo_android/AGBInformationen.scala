@@ -12,7 +12,7 @@ class AGBInformationen extends AppCompatActivity {
   }
 
   def infoNext(view: View): Unit = {
-    val i = new Intent(this, classOf[PersDaten1])
+    val i = new Intent(this, classOf[AGBBestaetigung])
     startActivity(i)
   }
 }
