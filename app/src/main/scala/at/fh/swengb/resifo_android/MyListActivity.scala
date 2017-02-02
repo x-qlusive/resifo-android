@@ -5,7 +5,6 @@ package at.fh.swengb.resifo_android
   */
 import android.app.ListActivity
 import android.os.Bundle
-import android.provider.Contacts.People
 import android.view.View
 import android.widget.{ArrayAdapter, ListView, SimpleCursorAdapter}
 
@@ -23,11 +22,12 @@ class MyListActivity extends ListActivity {
 
     //val persons: List[Person] = aDb.mkPersonDao().findByFirstName("ggg")
 
-    //val ps : List[Person] = List(Person("aaa","b"))
+    val ps : List[Person] = List(Person("aaa","b", "c", "d","aaa","b", "c", "d","aaa","b", "c", "d",
+      "aaa","b", "c", "d","aaa","b", "c", "d","aaa","b", "c", "d","aaa","b", "c"))
 
-    //val pA = new ArrayAdapter[Person](this, android.R.layout.simple_list_item_1, persons)
+    val pA = new ArrayAdapter[Person](this, android.R.layout.simple_list_item_1, ps)
 
-    //setListAdapter(pA)
+    setListAdapter(pA)
   }
 
   override def onListItemClick(l: ListView, v: View, pos: Int, i: Long) {

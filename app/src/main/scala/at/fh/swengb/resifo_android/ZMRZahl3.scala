@@ -8,10 +8,15 @@ import android.view.View
 import android.widget.RadioButton
 
 class ZMRZahl3 extends AppCompatActivity {
+  var person:Person = _
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_data_zmrzahl)
+    val intent:Intent = this.getIntent()
+    val bundle:Bundle = intent.getExtras()
+    person = bundle.getSerializable("person").asInstanceOf[Person]
   }
+
 
 
   def backToDi2(view: View): Unit = {
@@ -23,16 +28,29 @@ class ZMRZahl3 extends AppCompatActivity {
 
     val aut: RadioButton = findViewById(R.id.aut).asInstanceOf[RadioButton]
     val sonstige: RadioButton = findViewById(R.id.sonstige).asInstanceOf[RadioButton]
-    val staatsangehörigkeit: View = findViewById(R.id.staatsangehörigkeit);
-
+    val staatsangehörigkeit: String = findViewById(R.id.staatsangehörigkeit).toString
+    var isAut:Boolean = false
+    var isFilled:Boolean = false
+    //TODO: Code duplication entfernen
     if (aut.isChecked()) {
-      val autIntent = new Intent(this, classOf[Reisedokument4]); // <----- START "Zuzug aus Ausland" ACTIVITY
-      startActivity(autIntent);
+      isAut = true
+      person = person.copy(state = "Österreich")
     }
 
     else if (sonstige.isChecked()) {
+      val cond1: Boolean = staatsangehörigkeit == null
+      val cond2: Boolean = staatsangehörigkeit.equals("")
+
+      if (cond1 | cond2 ) {
+        val alertDialog = new AlertDialog.Builder(this).create()
+        alertDialog.setTitle("ACHTUNG")
+        alertDialog.setMessage("'Staatsangehörigkeit' wurde nicht ausgefüllt")
+        alertDialog.show()
+      } else {
+
+      person = person.copy(state = staatsangehörigkeit)
       val sonstigeIntent = new Intent(this, classOf[Reisedokument4]); // <----- START "Hauptwohnsitz Nein" ACTIVITY
-      startActivity(sonstigeIntent);
+      startActivity(sonstigeIntent)}
     }
 
     if (!aut.isChecked() && !sonstige.isChecked()) {

@@ -7,10 +7,15 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.{EditText, RadioButton}
 
+
 class PersDaten2 extends AppCompatActivity {
+  var person:Person = _
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_data_persdaten2)
+    val intent:Intent = this.getIntent()
+    val bundle:Bundle = intent.getExtras()
+    person = bundle.getSerializable("person").asInstanceOf[Person]
   }
 
   def backToDi1(view: View): Unit = {
@@ -25,13 +30,21 @@ class PersDaten2 extends AppCompatActivity {
     val familienstand: String = findViewById(R.id.familienstand).asInstanceOf[EditText].getText.toString
 
     if (m.isChecked()) {
-      val mIntent = new Intent(this, classOf[ZMRZahl3]); // <----- START "ZMR Zahl" ACTIVITY
-      startActivity(mIntent);
+      person = person.copy(sex = "m")
+      val mIntent = new Intent(this, classOf[ZMRZahl3])
+      val bundle:Bundle = new Bundle()
+      bundle.putSerializable("person", person)
+      mIntent.putExtras(bundle)// <----- START "ZMR Zahl" ACTIVITY
+      startActivity(mIntent)
     }
 
     else if (w.isChecked()) {
-      val wIntent = new Intent(this, classOf[ZMRZahl3]); // <----- START "ZMR Zahl" ACTIVITY
-      startActivity(wIntent);
+      person = person.copy(sex = "w")
+      val wIntent = new Intent(this, classOf[ZMRZahl3])
+      val bundle:Bundle = new Bundle()
+      bundle.putSerializable("person", person)
+      wIntent.putExtras(bundle)// <----- START "ZMR Zahl" ACTIVITY
+      startActivity(wIntent)
     }
 
     if (!m.isChecked() && !w.isChecked()) {
@@ -51,7 +64,11 @@ class PersDaten2 extends AppCompatActivity {
       alertDialog.setMessage("'Familienstand' wurde nicht ausgefüllt")
       alertDialog.show()
     } else {
-      val jaIntent = new Intent(this, classOf[PersDaten2]); //
+      val jaIntent = new Intent(this, classOf[PersDaten2])
+      person = person.copy(civilStatus = familienstand)
+      val bundle:Bundle = new Bundle()
+      bundle.putSerializable("person", person)
+      jaIntent.putExtras(bundle)//
       startActivity(jaIntent);
     }
   }

@@ -14,6 +14,8 @@ class PersDaten1 extends AppCompatActivity {
   private[resifo_android] var date: EditText = null
   private[resifo_android] var datePickerDialog: DatePickerDialog = null
 
+  var person:Person = _
+
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_data_persdaten1)
@@ -50,17 +52,18 @@ class PersDaten1 extends AppCompatActivity {
     val cond3: Boolean = nachname == null
     val cond4: Boolean = nachname.equals("")
 
-    println("mit |: " + ( cond1 | cond2 | cond3| cond4))
-    println("mit ||: " + ( cond1 || cond2 || cond3|| cond4))
-
     if (cond1 | cond2 | cond3 | cond4) {
       val alertDialog = new AlertDialog.Builder(this).create()
       alertDialog.setTitle("ACHTUNG")
       alertDialog.setMessage("'Vorname' oder 'Nachname' wurde nicht ausgefüllt")
       alertDialog.show()
     } else {
-      val jaIntent = new Intent(this, classOf[PersDaten2]); //
-      startActivity(jaIntent);
+      person = person.copy(firstName = vorname, secondName = nachname)
+      val jaIntent = new Intent(this, classOf[PersDaten2])
+      val bundle:Bundle = new Bundle()
+      bundle.putSerializable("person", person)
+      jaIntent.putExtras(bundle)
+      startActivity(jaIntent)
     }
 
   }
