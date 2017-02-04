@@ -7,7 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.{DatePicker, EditText}
+import android.widget.{ArrayAdapter, DatePicker, EditText, Spinner}
 
 class Reisedokument4 extends AppCompatActivity {
   private[resifo_android] var date: EditText = null
@@ -36,6 +36,12 @@ class Reisedokument4 extends AppCompatActivity {
     val intent:Intent = this.getIntent()
     val bundle:Bundle = intent.getExtras()
     person = bundle.getSerializable("person").asInstanceOf[Person]
+
+
+    val spinner = findViewById(R.id.reisedokument).asInstanceOf[Spinner]
+    val adapter = ArrayAdapter.createFromResource(this, R.array.array_reisedokument, android.R.layout.simple_spinner_item)
+    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+    spinner.setAdapter(adapter)
   }
 
   def backToDi3(view: View): Unit = {

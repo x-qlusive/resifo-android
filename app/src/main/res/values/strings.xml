@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">resifo-android</string>
+
+    <string-array name="array_religion">
+        <item>Keine Angabe</item>
+        <item>Katholisch</item>
+        <item>Islam</item>
+        <item>Orthodox</item>
+        <item>Evangelisch</item>
+    </string-array>
+
+    <string-array name="array_akadgrad">
+        <item>Keine Angabe</item>
+        <item>Dr.</item>
+        <item>Mag.</item>
+        <item>Dipl.-Ing.</item>
+        <item>MSc</item>
+        <item>BSc</item>
+        <item>HR.</item>
+    </string-array>
+
+    <string-array name="array_reisedokument">
+        <item>Reisepass</item>
+        <item>Lichtbildausweiß</item>
+        <item>Führerschein</item>
+    </string-array>
+
 </resources>

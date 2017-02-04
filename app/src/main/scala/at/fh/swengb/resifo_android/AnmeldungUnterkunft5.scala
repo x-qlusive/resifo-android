@@ -66,7 +66,7 @@ class AnmeldungUnterkunft5 extends AppCompatActivity {
       startActivity(neinIntent)
     }
 
-    if (!Ja.isChecked() && !Nein.isChecked() && (cond1 | cond2 | cond3 | cond4 | cond5 | cond6 | cond7 |
+    if (!Ja.isChecked() | !Nein.isChecked() & (cond1 | cond2 | cond3 | cond4 | cond5 | cond6 | cond7 |
       cond8 | cond9 | cond10 | cond11 | cond12)) {
       val alertDialog = new AlertDialog.Builder(this).create();
       alertDialog.setTitle("ACHTUNG");
