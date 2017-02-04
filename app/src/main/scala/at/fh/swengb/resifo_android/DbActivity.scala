@@ -65,13 +65,13 @@ class DbActivity extends Activity {
     val landlord: String = ???
 
     //Daten aus den Views müssen hier eingetragen werden
-    val person:Person = Person(firstName, secondName, unmarriedName, dateOfBirth,
+    /*val person:Person = Person(firstName, secondName, unmarriedName, dateOfBirth,
       sex, religion, birthCity, civilStatus, state , zmr,documentNr,
       documentIssueDate, newStreet, newHouseNr, newLevel, newDoorNr,
       mainStreet, mainHouseNr, mainLevel, mainDoorNr, oldState,
       oldStreet, oldHouseNr, oldLevel, oldDoorNr, newState, landlord)
     val personDao = aDb.mkPersonDao()
-    personDao.insert(person)
+    personDao.insert(person)*/
   }
 
   def loadFromDb(view: View): Unit = {

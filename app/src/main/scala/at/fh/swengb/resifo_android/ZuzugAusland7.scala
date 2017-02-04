@@ -8,9 +8,13 @@ import android.view.View
 import android.widget.{RadioButton, TextView}
 
 class ZuzugAusland7 extends AppCompatActivity {
+  var person:Person = _
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_data_zuzugausland)
+    val intent:Intent = this.getIntent()
+    val bundle:Bundle = intent.getExtras()
+    person = bundle.getSerializable("person").asInstanceOf[Person]
   }
 
   def backToDi5(view: View): Unit = {
@@ -22,7 +26,7 @@ class ZuzugAusland7 extends AppCompatActivity {
 
     val auslandJa: RadioButton = findViewById(R.id.auslandJa).asInstanceOf[RadioButton]
     val auslandNein: RadioButton = findViewById(R.id.auslandNein).asInstanceOf[RadioButton]
-    val staatsangabe: TextView = findViewById(R.id.staatsangabe).asInstanceOf[TextView]
+    val staatsangabe: String = findViewById(R.id.staatsangabe).asInstanceOf[TextView].toString
 
     if (auslandJa.isChecked()) {
       val mIntent = new Intent(this, classOf[AbmeldungUnterkunft8]); // <----- START "ZMR Zahl" ACTIVITY
@@ -31,14 +35,27 @@ class ZuzugAusland7 extends AppCompatActivity {
 
 
     if (auslandNein.isChecked()) {
-      val wIntent = new Intent(this, classOf[AbmeldungUnterkunft8]); // <----- START "ZMR Zahl" ACTIVITY
-      startActivity(wIntent);
+      val cond1: Boolean = staatsangabe == null
+      val cond2: Boolean = staatsangabe.equals("")
+      if (cond1 | cond2) {
+        val alertDialog = new AlertDialog.Builder(this).create()
+        alertDialog.setTitle("ACHTUNG")
+        alertDialog.setMessage("'Staat' bitte ausfüllen")
+        alertDialog.show()
+      } else {
+        person = person.copy(oldState = staatsangabe)
+        val jaIntent = new Intent(this, classOf[AbmeldungUnterkunft8])
+        val bundle:Bundle = new Bundle()
+        bundle.putSerializable("person", person)
+        jaIntent.putExtras(bundle)
+        startActivity(jaIntent)
+      }
     }
 
     if (!auslandJa.isChecked() && !auslandNein.isChecked()) {
       val alertDialog = new AlertDialog.Builder(this).create();
       alertDialog.setTitle("ACHTUNG");
-      alertDialog.setMessage("Zuzug aus dem Auswahl muss ausgewählt sein");
+      alertDialog.setMessage("Bitte geben Sie an, ob Sie aus dem Ausland zuziehen");
       alertDialog.show();
     }
 

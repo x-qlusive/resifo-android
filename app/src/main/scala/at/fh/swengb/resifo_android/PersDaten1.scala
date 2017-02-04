@@ -14,7 +14,8 @@ class PersDaten1 extends AppCompatActivity {
   private[resifo_android] var date: EditText = null
   private[resifo_android] var datePickerDialog: DatePickerDialog = null
 
-  var person:Person = _
+  var person:Person = Person(null, null, null, null,null, null, null, null,null, null, null, null,null,
+    null, null, null,null, null, null, null,null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null)
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)

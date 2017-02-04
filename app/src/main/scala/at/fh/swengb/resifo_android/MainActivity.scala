@@ -36,4 +36,9 @@ class MainActivity extends Activity {
     val i = new Intent(this, classOf[AGBBestaetigung])
     startActivity(i)
   }
+
+  def eintragAnzeigen(view: View): Unit = {
+    val i = new Intent(this, classOf[MyListActivity])
+    startActivity(i)
+  }
 }

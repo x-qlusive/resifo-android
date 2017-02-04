@@ -29,11 +29,10 @@ class ZMRZahl3 extends AppCompatActivity {
     val aut: RadioButton = findViewById(R.id.aut).asInstanceOf[RadioButton]
     val sonstige: RadioButton = findViewById(R.id.sonstige).asInstanceOf[RadioButton]
     val staatsangehörigkeit: String = findViewById(R.id.staatsangehörigkeit).toString
-    var isAut:Boolean = false
     var isFilled:Boolean = false
     //TODO: Code duplication entfernen
     if (aut.isChecked()) {
-      isAut = true
+      isFilled = true
       person = person.copy(state = "Österreich")
     }
 
@@ -47,10 +46,9 @@ class ZMRZahl3 extends AppCompatActivity {
         alertDialog.setMessage("'Staatsangehörigkeit' wurde nicht ausgefüllt")
         alertDialog.show()
       } else {
-
+        isFilled = true
       person = person.copy(state = staatsangehörigkeit)
-      val sonstigeIntent = new Intent(this, classOf[Reisedokument4]); // <----- START "Hauptwohnsitz Nein" ACTIVITY
-      startActivity(sonstigeIntent)}
+      }
     }
 
     if (!aut.isChecked() && !sonstige.isChecked()) {
@@ -58,6 +56,14 @@ class ZMRZahl3 extends AppCompatActivity {
       alertDialog.setTitle("ACHTUNG");
       alertDialog.setMessage("Sie müssen eine Staatsangehörigkeit auswählen");
       alertDialog.show();
+    }
+
+    if (isFilled == true){
+      val sonstigeIntent = new Intent(this, classOf[Reisedokument4]) // <----- START "Hauptwohnsitz Nein" ACTIVITY
+      val bundle:Bundle = new Bundle()
+      bundle.putSerializable("person", person)
+      sonstigeIntent.putExtras(bundle)
+      startActivity(sonstigeIntent)
     }
 
 

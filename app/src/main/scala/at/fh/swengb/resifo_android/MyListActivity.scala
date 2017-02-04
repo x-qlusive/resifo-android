@@ -22,10 +22,8 @@ class MyListActivity extends ListActivity {
 
     //val persons: List[Person] = aDb.mkPersonDao().findByFirstName("ggg")
 
-    val ps : List[Person] = List(Person("aaa","b", "c", "d","aaa","b", "c", "d","aaa","b", "c", "d",
-      "aaa","b", "c", "d","aaa","b", "c", "d","aaa","b", "c", "d","aaa","b", "c"))
 
-    val pA = new ArrayAdapter[Person](this, android.R.layout.simple_list_item_1, ps)
+    val pA = new ArrayAdapter[Person](this, android.R.layout.simple_list_item_1, aDb.mkPersonDao().getAllElements())
 
     setListAdapter(pA)
   }

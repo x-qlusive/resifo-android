@@ -31,20 +31,10 @@ class PersDaten2 extends AppCompatActivity {
 
     if (m.isChecked()) {
       person = person.copy(sex = "m")
-      val mIntent = new Intent(this, classOf[ZMRZahl3])
-      val bundle:Bundle = new Bundle()
-      bundle.putSerializable("person", person)
-      mIntent.putExtras(bundle)// <----- START "ZMR Zahl" ACTIVITY
-      startActivity(mIntent)
     }
 
     else if (w.isChecked()) {
       person = person.copy(sex = "w")
-      val wIntent = new Intent(this, classOf[ZMRZahl3])
-      val bundle:Bundle = new Bundle()
-      bundle.putSerializable("person", person)
-      wIntent.putExtras(bundle)// <----- START "ZMR Zahl" ACTIVITY
-      startActivity(wIntent)
     }
 
     if (!m.isChecked() && !w.isChecked()) {
