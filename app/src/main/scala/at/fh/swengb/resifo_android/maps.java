@@ -14,14 +14,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-public class maps extends AppCompatActivity {
+public class Maps extends Activity {
 
     Button batn;
     TextView Hausnummer;
@@ -40,7 +37,7 @@ public class maps extends AppCompatActivity {
         Strasse = (TextView) findViewById(R.id.anmeldungStrasse);
         Hausnummer = (TextView) findViewById(R.id.anmeldungHausnr);
         appLocationService = new AppLocationService(
-                maps.this);
+                Maps.this);
 
 
         batn = (Button) findViewById(R.id.anmeldunggps);
@@ -57,10 +54,10 @@ public class maps extends AppCompatActivity {
                 //double longitude = -122.084095
 
                 if (location != null) {
-                    double latitude = location.getLatitude();
-                    double longitude = location.getLongitude();
-                    //double latitude = 47.069718;
-                    //double longitude = 15.409874;
+                    //double latitude = location.getLatitude();
+                    //double longitude = location.getLongitude();
+                    double latitude = 47.069718;
+                    double longitude = 15.409874;
                     LocationAddress locationAddress = new LocationAddress();
                     locationAddress.getAddressFromLocation(latitude, longitude,
                             getApplicationContext(), new GeocoderHandler());
@@ -75,7 +72,7 @@ public class maps extends AppCompatActivity {
 
     public void showSettingsAlert() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(
-                maps.this);
+                Maps.this);
         alertDialog.setTitle("SETTINGS");
         alertDialog.setMessage("Enable Location Provider! Go to settings menu?");
         alertDialog.setPositiveButton("Settings",
@@ -83,7 +80,7 @@ public class maps extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(
                                 Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                        maps.this.startActivity(intent);
+                        Maps.this.startActivity(intent);
                     }
                 });
         alertDialog.setNegativeButton("Cancel",

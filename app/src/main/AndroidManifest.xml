@@ -39,7 +39,8 @@
         <activity android:name=".Unterkunftgeber9" />
         <activity android:name=".Meldepflichtiger10" />
         <activity android:name=".PersonActivity" />
-        <activity android:name=".maps"/>
+        <activity android:name=".Maps"/>
+
     </application>
 
 </manifest>
