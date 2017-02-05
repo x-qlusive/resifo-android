@@ -30,10 +30,17 @@ At the time of implementation it was necessary to patch the scala gradle plugin 
 
 The first step was to think about the idea to create an App which makes it possible for users to inscribe it's personal data in the easiest way and to store it in a database.
 Primarily we established a concept which includes contents like design, functionality, task distribution, and other technical details or project management questions.
-Afterwards we talked about the most imprtant tasks (preparing the Views, implementing the database etc.) and the time management. Furthermore we decided to use the communication platform "Slack", which
-makes it easier for us to interact with each other. nfhtirkeutjfdklka
+Afterwards we talked about the most important tasks (preparing the Views, implementing the database etc.) and the time management. Furthermore we decided to use the communication platform "Slack", which
+makes it easier for all team members to interact with each other.
 
 ## Screenshots
+![Startdesign](/jpg/Main.PNG)
+![Anmeldung](/jpg/Anmeldung.PNG)
+![Abmeldung](/jpg/abmeldung.PNG)
+![Name](/jpg/Name.PNG)
+![Dteails](/jpg/pasted_image_at_2017_02_06_12_09_am.PNG)
+![Unterschrift](/jpg/Unterschrift Unterkunftgeber.PNG)
+![Unterschrift Fail](/jpg/Unterschrift Fail.PNG)
 
 ## Releases
 The project was published on February 6th, 2017.
@@ -50,31 +57,5 @@ This project was created by
 * <a href="https://github.com/Jashanic14">Jashanica Labinot</a>
 * <a href="https://github.com/x-qlusive">Plank Patrick</a>
 
-```
-rofl
-```
 
-
-
-1. [Quick start](#quick-start)
-  1. [SBT plugin](#sbt-plugin)
-  2. [Command-line](#command-line)
-  3. [API](#api)
-2. [Why](#why)
-3. [Usage](#usage)
-  1. [SBT plugin](#sbt-plugin-1)
-  2. [Command-line](#command-line-1)
-  3. [API](#api-1)
-  4. [Scala JS demo](#scala-js-demo)
-4. [Extra features](#extra-features)
-  1. [Printing trees](#printing-trees)
-  2. [Generating bootstrap launchers](#generating-bootstrap-launchers)
-  3. [Credentials](#credentials)
-  4. [Extra protocols](#extra-protocols)
-5. [Limitations](#limitations)
-6. [FAQ](#faq)
-7. [Roadmap](#roadmap)
-8. [Development tips](#development-tips)
-9. [Contributors](#contributors)
-10. [Projects using coursier](#projects-using-coursier)
 
