@@ -12,6 +12,9 @@ import android.widget._
 class Unterkunftgeber9 extends AppCompatActivity {
   var person:Person = _
 
+  private[resifo_android] var date: EditText = null
+  private[resifo_android] var datePickerDialog: DatePickerDialog = null
+
   def viewsBefüllen(p: Person) = {
     findViewById(R.id.unterkunftgeber)
       .asInstanceOf[EditText].setText(p.landlord)
@@ -21,7 +24,22 @@ class Unterkunftgeber9 extends AppCompatActivity {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_unterkunftgeber)
 
-
+    date = findViewById(R.id.date).asInstanceOf[EditText]
+    date.setOnClickListener(new View.OnClickListener() {
+      def onClick(v: View) {
+        val c: Calendar = Calendar.getInstance
+        val mYear: Int = c.get(Calendar.YEAR)
+        val mMonth: Int = c.get(Calendar.MONTH)
+        val mDay: Int = c.get(Calendar.DAY_OF_MONTH)
+        datePickerDialog = new DatePickerDialog(Unterkunftgeber9.this,
+          new DatePickerDialog.OnDateSetListener() {
+            def onDateSet(view: DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int) {
+              date.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year)
+            }
+          }, mYear, mMonth, mDay)
+        datePickerDialog.show
+      }
+    })
     val intent:Intent = this.getIntent()
     val bundle:Bundle = intent.getExtras()
     person = bundle.getSerializable("person").asInstanceOf[Person]

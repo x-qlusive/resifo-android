@@ -9,15 +9,26 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="Anmeldung der Unterkunft"
+            android:text="Anmeldung der Unterkunft:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView117"
             android:layout_weight="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
             android:textStyle="normal|bold" />
+
+        <Button
+            android:text="GPS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/anmeldunggps"
+            android:layout_marginTop="10dp"
+            android:onClick="gps"
+            android:textStyle="normal|bold"
+            android:layout_marginRight="10dp" />
+
     </LinearLayout>
 
     <LinearLayout
