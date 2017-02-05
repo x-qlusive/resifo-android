@@ -23,8 +23,14 @@ class AGBBestaetigung extends AppCompatActivity {
     val baestetigung: RadioButton = findViewById(R.id.baestetigung).asInstanceOf[RadioButton]
 
     if (baestetigung.isChecked()) {
-      val mIntent = new Intent(this, classOf[PersDaten1]); // <----- START "Personen Daten 1" ACTIVITY
-      startActivity(mIntent);
+      val mIntent = new Intent(this, classOf[PersDaten1]) // <----- START "Personen Daten 1" ACTIVITY
+      val bundle:Bundle = new Bundle()
+      bundle.putSerializable("person", Person(null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+        null, null))
+      mIntent.putExtras(bundle)
+      startActivity(mIntent)
     }
 
     if (!baestetigung.isChecked()) {

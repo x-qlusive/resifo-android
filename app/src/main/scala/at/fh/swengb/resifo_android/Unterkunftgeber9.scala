@@ -11,6 +11,12 @@ import android.widget._
 
 class Unterkunftgeber9 extends AppCompatActivity {
   var person:Person = _
+
+  def viewsBefüllen(p: Person) = {
+    findViewById(R.id.unterkunftgeber)
+      .asInstanceOf[EditText].setText(p.landlord)
+  }
+
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_unterkunftgeber)
@@ -19,11 +25,13 @@ class Unterkunftgeber9 extends AppCompatActivity {
     val intent:Intent = this.getIntent()
     val bundle:Bundle = intent.getExtras()
     person = bundle.getSerializable("person").asInstanceOf[Person]
+    if(person.landlord != null){
+      viewsBefüllen(person)
+    }
   }
 
   def backToDi8(view: View): Unit = {
-    val i = new Intent(this, classOf[AbmeldungUnterkunft8])
-    startActivity(i)
+    onBackPressed()
   }
 
   def dataInput10(view: View): Unit = {

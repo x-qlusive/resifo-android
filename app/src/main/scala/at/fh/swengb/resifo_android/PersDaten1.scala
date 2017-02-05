@@ -14,13 +14,20 @@ class PersDaten1 extends AppCompatActivity {
   private[resifo_android] var date: EditText = null
   private[resifo_android] var datePickerDialog: DatePickerDialog = null
 
-  var person:Person = Person(null, null, null, null,null, null, null, null,null, null, null, null,null,
-    null, null, null,null, null, null, null,null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null)
+  var person:Person = _
+
+  def viewsBefüllen(p: Person) = {
+    findViewById(R.id.nachname).asInstanceOf[EditText].setText(p.secondName)
+    findViewById(R.id.vorname).asInstanceOf[EditText].setText(p.firstName)
+    findViewById(R.id.date).asInstanceOf[EditText].setText(p.dateOfBirth)
+  }
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_data_persdaten1)
-
+    val intent:Intent = this.getIntent()
+    val bundle:Bundle = intent.getExtras()
+    person = bundle.getSerializable("person").asInstanceOf[Person]
     date = findViewById(R.id.date).asInstanceOf[EditText]
     date.setOnClickListener(new View.OnClickListener() {
       def onClick(v: View) {
@@ -36,7 +43,9 @@ class PersDaten1 extends AppCompatActivity {
         datePickerDialog.show
       }
     })
-
+    if(person.firstName != null){
+      viewsBefüllen(person)
+    }
     val spinner = findViewById(R.id.akadgrad).asInstanceOf[Spinner]
     val adapter = ArrayAdapter.createFromResource(this, R.array.array_akadgrad, android.R.layout.simple_spinner_item)
     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -64,7 +73,7 @@ class PersDaten1 extends AppCompatActivity {
       alertDialog.setMessage("'Vorname' oder 'Nachname' wurde nicht ausgefüllt")
       alertDialog.show()
     } else {
-      person = person.copy(firstName = vorname, secondName = nachname)
+      person = person.copy(firstName = vorname, secondName = nachname, dateOfBirth = date.getText.toString)
       val jaIntent = new Intent(this, classOf[PersDaten2])
       val bundle:Bundle = new Bundle()
       bundle.putSerializable("person", person)

@@ -3,13 +3,13 @@ package at.fh.swengb.resifo_android
 /**
   * Created by Gam0r on 28.01.2017.
   */
-import android.content.{ContentValues, Context, CursorLoader}
+import android.content.{ContentValues, Context}
 import android.database.Cursor
 import android.database.sqlite.{SQLiteDatabase, SQLiteOpenHelper}
 
 import scala.collection.mutable.ListBuffer
 
-object SimpleDb {
+object PersonDb {
 
   val Name = "certificateOFRegistration"
 }
@@ -19,7 +19,7 @@ object SimpleDb {
   *
   * Created by lad on 19/01/2017.
   */
-case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb.Name, null, 1) {
+case class PersonDb(context: Context) extends SQLiteOpenHelper(context, PersonDb.Name, null, 1) {
 
   override def onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int): Unit = ()
 
@@ -124,8 +124,9 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
       db.insert("person", null, cv)
     }
 
-    def deleteByFirstName(firstName: String): Unit = {
-      db.delete("person", "firstName = ?", Array(firstName))
+    def delete(firstName: String, secondName: String, dayOfBirth: String): Unit = {
+      db.delete("person", "firstName = ? and secondName = ? and dateOfBirth = ?",
+        Array(firstName, secondName, dayOfBirth))
     }
 
     def update(p: Person): Int =
@@ -152,7 +153,7 @@ case class SimpleDb(context: Context) extends SQLiteOpenHelper(context, SimpleDb
       * param firstName the firstName to search for
       * return
       */
-    def getAllElements(): List[Person] = {
+    def getAllElements: List[Person] = {
       var someCursor: Option[Cursor] = None
       try {
         someCursor = somePersonCursor()

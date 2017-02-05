@@ -14,6 +14,12 @@ class Reisedokument4 extends AppCompatActivity {
   private[resifo_android] var datePickerDialog: DatePickerDialog = null
   var person:Person = _
 
+  def viewsBefüllen(p: Person) = {
+    findViewById(R.id.reisedokumentNummer).asInstanceOf[EditText].setText(p.documentNr)
+    findViewById(R.id.ausstellendebehoerde).asInstanceOf[EditText].setText(p.documentAgency)
+    findViewById(R.id.date).asInstanceOf[EditText].setText(p.documentIssueDate)
+  }
+
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_data_reisedokument)
@@ -36,7 +42,9 @@ class Reisedokument4 extends AppCompatActivity {
     val intent:Intent = this.getIntent()
     val bundle:Bundle = intent.getExtras()
     person = bundle.getSerializable("person").asInstanceOf[Person]
-
+    if(person.documentNr != null){
+      viewsBefüllen(person)
+    }
 
     val spinner = findViewById(R.id.reisedokument).asInstanceOf[Spinner]
     val adapter = ArrayAdapter.createFromResource(this, R.array.array_reisedokument, android.R.layout.simple_spinner_item)
@@ -45,8 +53,7 @@ class Reisedokument4 extends AppCompatActivity {
   }
 
   def backToDi3(view: View): Unit = {
-    val i = new Intent(this, classOf[ZMRZahl3])
-    startActivity(i)
+    onBackPressed()
   }
   /*
   *   Check for input for the other views
@@ -68,12 +75,13 @@ class Reisedokument4 extends AppCompatActivity {
     if (cond1 | cond2 | cond3 | cond4 | cond5 | cond6 ) {
       val alertDialog = new AlertDialog.Builder(this).create()
       alertDialog.setTitle("ACHTUNG")
-      alertDialog.setMessage("Achtung Dokument, Dokument Nummer sowie ausstellende Behörde müssen ausgefüllt werden")
+      alertDialog.setMessage("Achtung Dokument, Dokument Nummer sowie ausstellende Behörde " +
+        "müssen ausgefüllt werden")
       alertDialog.show()
     } else {
       val jaIntent = new Intent(this, classOf[AnmeldungUnterkunft5])
       person = person.copy(documentAgency = dokumentBH, documentType = dokument,
-        documentNr = dokumentNr, documentIssueDate = date.toString)
+        documentNr = dokumentNr, documentIssueDate = date.getText.toString)
       val bundle:Bundle = new Bundle()
       bundle.putSerializable("person", person)
       jaIntent.putExtras(bundle)
