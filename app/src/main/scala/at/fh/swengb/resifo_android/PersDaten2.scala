@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.{EditText, RadioButton}
+import android.widget.{ArrayAdapter, EditText, RadioButton, Spinner}
 
 
 class PersDaten2 extends AppCompatActivity {
@@ -16,6 +16,12 @@ class PersDaten2 extends AppCompatActivity {
     val intent:Intent = this.getIntent()
     val bundle:Bundle = intent.getExtras()
     person = bundle.getSerializable("person").asInstanceOf[Person]
+
+    val spinner = findViewById(R.id.religion).asInstanceOf[Spinner]
+    val adapter = ArrayAdapter.createFromResource(this, R.array.array_religion, android.R.layout.simple_spinner_item)
+    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+    spinner.setAdapter(adapter)
+
   }
 
   def backToDi1(view: View): Unit = {
@@ -54,7 +60,7 @@ class PersDaten2 extends AppCompatActivity {
       alertDialog.setMessage("'Familienstand' wurde nicht ausgefüllt")
       alertDialog.show()
     } else {
-      val jaIntent = new Intent(this, classOf[PersDaten2])
+      val jaIntent = new Intent(this, classOf[ZMRZahl3])
       person = person.copy(civilStatus = familienstand)
       val bundle:Bundle = new Bundle()
       bundle.putSerializable("person", person)

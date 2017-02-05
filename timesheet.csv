@@ -13,6 +13,7 @@ jashanic14,20170131,4.5,"Created new Activities (DataInput1-7) and linked them +
 jashanic14,20170201,2,"Edited Activities and added 3 new and added all intents for the onClick Buttons + tested listViews with CustomAdapter [removed it again after testing])"
 jashanic14,20170201,4,"Implemented conditions for RadioButtons with popup error messages for user and tried to do the same for user input fields + changed the order of views"
 jashanic14,20170202,3,"Edited all ID of text fields and made them unique + implemented conditions for compulsory input fields + minor bug fixes in views"
+jashanic14,20170204,1,"Implemented spinners"
 pplank, 20170502, 3, "Location Address Getter"
 ccoelestin, 20170205, 4, "documentation (read me)"
 ccoelestin, 20170206, 2.5, "prepared presentation"

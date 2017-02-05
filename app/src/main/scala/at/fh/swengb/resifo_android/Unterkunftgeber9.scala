@@ -1,17 +1,21 @@
 package at.fh.swengb.resifo_android
 
-import android.app.AlertDialog
+import java.util.Calendar
+
+import android.app.{AlertDialog, DatePickerDialog}
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.EditText
+import android.widget._
 
 class Unterkunftgeber9 extends AppCompatActivity {
   var person:Person = _
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_unterkunftgeber)
+
+
     val intent:Intent = this.getIntent()
     val bundle:Bundle = intent.getExtras()
     person = bundle.getSerializable("person").asInstanceOf[Person]

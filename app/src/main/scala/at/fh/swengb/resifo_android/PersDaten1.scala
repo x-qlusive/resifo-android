@@ -7,7 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.{DatePicker, EditText, RadioButton}
+import android.widget._
 
 
 class PersDaten1 extends AppCompatActivity {
@@ -36,6 +36,11 @@ class PersDaten1 extends AppCompatActivity {
         datePickerDialog.show
       }
     })
+
+    val spinner = findViewById(R.id.akadgrad).asInstanceOf[Spinner]
+    val adapter = ArrayAdapter.createFromResource(this, R.array.array_akadgrad, android.R.layout.simple_spinner_item)
+    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+    spinner.setAdapter(adapter)
   }
 
   def di1Home(view: View): Unit = {
