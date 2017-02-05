@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="at.fh.swengb.resifo_android">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +24,7 @@
             android:name=".DbActivity"
             android:label="@string/first_title" />
         <activity
-            android:name=".MyListActivity"
+            android:name=".PersonListActivity"
             android:label="List Activity" />
         <activity android:name=".AGBBestaetigung" />
         <activity android:name=".AGBInformationen" />
@@ -35,6 +38,9 @@
         <activity android:name=".AbmeldungUnterkunft8" />
         <activity android:name=".Unterkunftgeber9" />
         <activity android:name=".Meldepflichtiger10" />
+        <activity android:name=".PersonActivity" />
+        <activity android:name=".Maps"/>
+
     </application>
 
 </manifest>

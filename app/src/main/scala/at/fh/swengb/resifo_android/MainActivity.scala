@@ -31,14 +31,15 @@ class MainActivity extends Activity {
   }
 
 
-  // called by a button click - see main.xml
+  // Create a new entry
   def newEntry(view: View): Unit = {
     val i = new Intent(this, classOf[AGBBestaetigung])
     startActivity(i)
   }
 
+  //Show all Entries
   def eintragAnzeigen(view: View): Unit = {
-    val i = new Intent(this, classOf[MyListActivity])
+    val i = new Intent(this, classOf[PersonListActivity])
     startActivity(i)
   }
 }

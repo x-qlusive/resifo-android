@@ -5,9 +5,19 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.EditText
 
 class HauptwohnsitzNein6 extends AppCompatActivity {
   var person: Person = _
+
+  def viewsBefüllen(p: Person) = {
+    findViewById(R.id.hwbleibtStrasse).asInstanceOf[EditText].setText(p.mainStreet)
+    findViewById(R.id.hwbleibtStiege).asInstanceOf[EditText].setText(p.mainLevel)
+    findViewById(R.id.hwbleibtOrt).asInstanceOf[EditText].setText(p.mainCity)
+    findViewById(R.id.hwbleibtPlz).asInstanceOf[EditText].setText(p.mainPostal)
+    findViewById(R.id.hwbleibtTuer).asInstanceOf[EditText].setText(p.mainDoorNr)
+    findViewById(R.id.hwbleibtHausnr).asInstanceOf[EditText].setText(p.mainHouseNr)
+  }
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
@@ -15,11 +25,13 @@ class HauptwohnsitzNein6 extends AppCompatActivity {
     val intent: Intent = this.getIntent()
     val bundle: Bundle = intent.getExtras()
     person = bundle.getSerializable("person").asInstanceOf[Person]
+    if(person.mainStreet != null){
+      viewsBefüllen(person)
+    }
   }
 
   def backToDi5(view: View): Unit = {
-    val i = new Intent(this, classOf[AnmeldungUnterkunft5])
-    startActivity(i)
+    onBackPressed()
   }
 
   def dataInput7(view: View): Unit = {

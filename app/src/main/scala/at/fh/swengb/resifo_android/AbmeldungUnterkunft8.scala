@@ -5,21 +5,41 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.RadioButton
+import android.widget.{EditText, RadioButton}
 
 class AbmeldungUnterkunft8 extends AppCompatActivity {
   var person:Person = _
+
+  def viewsBefüllen(p: Person) = {
+    findViewById(R.id.abmeldungStrasse).asInstanceOf[EditText].setText(p.oldStreet)
+    findViewById(R.id.abmeldungStiege).asInstanceOf[EditText].setText(p.oldLevel)
+    findViewById(R.id.abmeldungOrt).asInstanceOf[EditText].setText(p.oldCity)
+    findViewById(R.id.abmeldungPlz).asInstanceOf[EditText].setText(p.oldPostal)
+    findViewById(R.id.abmeldungTuer).asInstanceOf[EditText].setText(p.oldDoorNr)
+    findViewById(R.id.abmeldungHausnr).asInstanceOf[EditText].setText(p.oldHouseNr)
+    if(p.newState != null)
+      {
+        findViewById(R.id.abmeldungNein).asInstanceOf[RadioButton].setChecked(true)
+        findViewById(R.id.abmeldungStaat).asInstanceOf[EditText].setText(p.newState)
+      }
+    else{
+      findViewById(R.id.abmeldungJa).asInstanceOf[RadioButton].setChecked(true)
+    }
+  }
+
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_abmeldungunterkunft)
     val intent:Intent = this.getIntent()
     val bundle:Bundle = intent.getExtras()
     person = bundle.getSerializable("person").asInstanceOf[Person]
+    if(person.oldStreet != null){
+      viewsBefüllen(person)
+    }
   }
 
   def backToDi7(view: View): Unit = {
-    val i = new Intent(this, classOf[ZuzugAusland7])
-    startActivity(i)
+    onBackPressed()
   }
 
   def dataInput9(view: View): Unit = {

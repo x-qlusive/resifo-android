@@ -9,17 +9,25 @@ import android.widget.{RadioButton, TextView}
 
 class ZuzugAusland7 extends AppCompatActivity {
   var person:Person = _
+
+  def viewsBefüllen(p: Person) = {
+    findViewById(R.id.auslandNein).asInstanceOf[RadioButton].setChecked(true)
+    findViewById(R.id.staatsangabe).asInstanceOf[TextView].setText(p.oldState)
+  }
+
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_data_zuzugausland)
     val intent:Intent = this.getIntent()
     val bundle:Bundle = intent.getExtras()
     person = bundle.getSerializable("person").asInstanceOf[Person]
+    if(person.oldState != null){
+      viewsBefüllen(person)
+    }
   }
 
   def backToDi5(view: View): Unit = {
-    val i = new Intent(this, classOf[AnmeldungUnterkunft5])
-    startActivity(i)
+    onBackPressed()
   }
 
   def dataInput8(view: View): Unit = {

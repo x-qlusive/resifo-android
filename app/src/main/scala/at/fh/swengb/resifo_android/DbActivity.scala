@@ -22,12 +22,12 @@ import scala.util.Random
   */
 class DbActivity extends Activity {
 
-  var aDb: SimpleDb = _
+  var aDb: PersonDb = _
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.first)
-    aDb = SimpleDb(getApplicationContext)
+    aDb = PersonDb(getApplicationContext)
   }
 
 
@@ -75,7 +75,7 @@ class DbActivity extends Activity {
   }
 
   def loadFromDb(view: View): Unit = {
-    val i = new Intent(this, classOf[MyListActivity])
+    val i = new Intent(this, classOf[PersonListActivity])
     startActivity(i)
 
   }

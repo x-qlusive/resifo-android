@@ -1,3 +1,7 @@
+![Meldezettel](/jpg/meldezettelbild.png)
+
+
+
 ## Table of content
 
 1. [About](#about)
@@ -56,6 +60,7 @@ This project was created by
 * <a href="https://github.com/HribernigNikolaus">Hribernig Nikolaus</a>
 * <a href="https://github.com/Jashanic14">Jashanica Labinot</a>
 * <a href="https://github.com/x-qlusive">Plank Patrick</a>
+
 
 
 
