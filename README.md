@@ -8,8 +8,7 @@
 2. [Prerequisites](#prerequisites)
 3. [Getting Started](#getting-started)
 4. [Screenshots](Screenshots)
-4. [Releases](#releases)
-5. [FAQ](faq)
+5. [Releases](#releases)
 6. [License](license)
 7. [Contributors](contributors)
 
@@ -47,10 +46,7 @@ makes it easier for all team members to interact with each other.
 
 ## Releases
 The project was published on February 6th, 2017.
-## FAQ
-Warum?
-Wieso?
-Weshalb?
+
 ## License
 Read <a href="license.md">license.md</a> for more information.
 ## Contributors
