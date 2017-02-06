@@ -46,7 +46,7 @@ makes it easier for all team members to interact with each other.
 ![Unterschrift Fail](/jpg/Unterschrift Fail.png)
 
 ## Releases
-The project was published on February 6th, 2017.
+The project was published as an Early Alpha Version on February 6th, 2017.
 
 ## License
 Read <a href="license.md">license.md</a> for more information.
