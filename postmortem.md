@@ -10,7 +10,7 @@
 
 | Start Date  | End Date   | Project Manager  | Client |
 | ------------- |:-------------:| :-----:| ---- |
-|20-12-2016	 |06-02-2017 | PP	| CC NH LJ|
+|20-12-2016	 |06-02-2017 | PP	| CC / NH / LJ|
 
 ## Analysis
 
