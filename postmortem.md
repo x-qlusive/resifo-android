@@ -8,7 +8,7 @@
 <u>**Document Revision History**</u>
 
 
-| Start Date  | End Date   | Project Manager  | Client |
+| Start Date  | End Date   | Project Manager  | Stakeholder |
 | ------------- |:-------------:| :-----:| ---- |
 |20-12-2016	 |06-02-2017 | PP	| CC / NH / LJ|
 
