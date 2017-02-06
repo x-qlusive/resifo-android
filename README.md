@@ -38,13 +38,13 @@ Afterwards we talked about the most important tasks (preparing the Views, implem
 makes it easier for all team members to interact with each other.
 
 ## Screenshots
-![Startdesign](/jpg/Main.PNG)
-![Anmeldung](/jpg/Anmeldung.PNG)
-![Abmeldung](/jpg/abmeldung.PNG)
-![Name](/jpg/Name.PNG)
-![Dteails](/jpg/pasted_image_at_2017_02_06_12_09_am.PNG)
-![Unterschrift](/jpg/Unterschrift Unterkunftgeber.PNG)
-![Unterschrift Fail](/jpg/Unterschrift Fail.PNG)
+![Startdesign](/jpg/Main.png)
+![Anmeldung](/jpg/Anmeldung.png)
+![Abmeldung](/jpg/abmeldung.png)
+![Name](/jpg/Name.png)
+![Dteails](/jpg/pasted_image_at_2017_02_06_12_09_am.png)
+![Unterschrift](/jpg/Unterschrift Unterkunftgeber.png)
+![Unterschrift Fail](/jpg/Unterschrift Fail.png)
 
 ## Releases
 The project was published on February 6th, 2017.
