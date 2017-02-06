@@ -37,7 +37,7 @@ Afterwards we talked about the most important tasks (preparing the Views, implem
 makes it easier for all team members to interact with each other.
 
 ## Screenshots
-![Startdesign](/jpg/Main.png =250x)
+![Startdesign](/jpg/Main.png){:height="36px" width="36px"}
 ![Anmeldung](/jpg/Anmeldung.png)
 ![Abmeldung](/jpg/abmeldung.png)
 ![Name](/jpg/Name.png)
