@@ -17,9 +17,19 @@
 ### Success - What went well
 
 * Good Teamwork
+* Division of work
+* Communication between teammembers
+* Working together through GitHub
 
 
 ### Problem Areas - What went wrong
 
+* Time management
+* Detailed implementation of conditions 
+
+
 
 ##Lessons Learned
+
+* Do not commit not compiling code
+* Divide time over the whole projecttime - not just in the last week
